@@ -22,7 +22,7 @@
     --maroon:#6E1E26; --ink:#4a3318;
     --cardW:320px; --cardH:397px;
     --envW:382px; --envH:246px;
-    --stageH:560px;
+    --stageH:660px;
   }
   *{box-sizing:border-box;}
   html,body{height:100%;margin:0;}
@@ -63,7 +63,7 @@
   /* fireworks canvas on top, non-interactive */
   #fx{position:fixed;inset:0;z-index:1;pointer-events:none;}
 
-  .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:24px;}
+  .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;}
 
   .stage{
     position:relative;width:var(--envW);height:var(--stageH);
@@ -214,12 +214,12 @@
 
   .stage.presenting .card-clip,.stage.shine .card-clip,.stage.done .card-clip{overflow:visible;}
   .stage.presenting .envelope{transform:translateY(60px) scale(.82);opacity:0;}
-  .stage.presenting .card{transform:translateY(-74px) scale(1.28);}
+  .stage.presenting .card{transform:translateY(-124px) scale(1.5);}
   .stage.presenting .bird.l{transform:translate(calc(-50% - 260px),-300px) scale(.65) rotate(-16deg);opacity:0;}
   .stage.presenting .bird.r{transform:translate(calc(-50% + 260px),-300px) scale(.65) rotate(16deg) scaleX(-1);opacity:0;}
   .stage.presenting .ribbon{opacity:0;}
 
-  .stage.shine .card,.stage.done .card{transform:translateY(-74px) scale(1.28);}
+  .stage.shine .card,.stage.done .card{transform:translateY(-124px) scale(1.5);}
   .stage.shine .card .shine{animation:sweep 1.7s ease-in-out .1s 2;opacity:1;}
   .stage.shine .card .glow,.stage.done .card .glow{opacity:1;box-shadow:inset 0 0 70px rgba(255,224,150,.42);}
   @keyframes sweep{0%{background-position:120% 0;}100%{background-position:-160% 0;}}
@@ -230,6 +230,7 @@
     :root{--cardW:270px;--cardH:335px;--envW:322px;--envH:206px;--stageH:480px;}
     .stage.lifting .bird.l{transform:translate(calc(-50% - 135px),-52px) scale(.92) rotate(-7deg);}
     .stage.lifting .bird.r{transform:translate(calc(-50% + 135px),-52px) scale(.92) rotate(7deg) scaleX(-1);}
+    .stage.presenting .card,.stage.shine .card,.stage.done .card{transform:translateY(-64px) scale(1.4);}
   }
 
   @media (prefers-reduced-motion:reduce){
